@@ -53,6 +53,22 @@ public class RespStudyController {
     public ResponseEntity<Map<String, Object>> mapResponseEntity() {
         Map<String, Object> map = new HashMap<>();
         map.put("data", "데이터입니다.");
-        return new ResponseEntity<>(map, HttpStatus.OK);
+        return new ResponseEntity<>(map, HttpStatus.OK); 
+    }
+
+    // 최종적인 응답(Response)의 형태
+    @GetMapping("/resp")
+    public ResponseEntity<JsonTestDto> jsonResponse() {
+        JsonTestDto jsonTestDto = new JsonTestDto();
+        jsonTestDto.setName("김준일");
+        jsonTestDto.setAge(30);
+//        return ResponseEntity.ok().body(jsonTestDto); // return 부분이 응답
+//        return ResponseEntity.badRequest().body(jsonTestDto);
+//        return ResponseEntity.status(405).body(jsonTestDto);
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(jsonTestDto);
+        // 응답 방식은 위의 return 4가지 처럼 여러가지가 있다.
     }
 }
+
+// 요청은 메소드가 중요
+// 응답은 status코드가 중요

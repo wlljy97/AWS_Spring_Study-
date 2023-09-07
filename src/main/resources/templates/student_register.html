@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
+<!--title key값-->
+    <h1 th:text="${title}"></h1>
     <form method="post" action="/post/xwww">
         <div><input name="name" placeholder="이름"/></div>
         <div><input name="age" placeholder="나이"/></div>
