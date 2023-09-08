@@ -4,10 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
-public class RegisterUserReqDto {
+public class ModifyUserReqDto {
+    private int userId;
     private String username;
     private String name;
     private String phone;

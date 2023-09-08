@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class ViewsController{
 
-    // body 라는 것은 데이터라고 생각하면 편함
+    // 'body' 라는 것은 데이터라고 생각하면 편함
     @ResponseBody // 데이터를 바로 응답 ,  @ResponseBody 없어야지만 return이 일어난다.
     @GetMapping("/student/register")
     public String studentRegister(Model model) {

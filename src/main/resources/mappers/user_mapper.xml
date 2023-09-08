@@ -8,4 +8,31 @@
         insert into user_tb
         values (0, #{username}, #{name}, #{phone})
     </insert>
+
+    <select id="getUserListAll" resultType="com.aws.spring_study.entity.User">
+        select
+            user_id as userId,
+            username,
+            name,
+            phone
+        from
+            user_tb
+    </select>
+
+    <update id="updateUser" parameterType="com.aws.spring_study.dto.ModifyUserReqDto">
+        update user_tb
+            set
+                username = #{username},
+                name = #{name},
+                phone = #{phone}
+            where
+                user_id = #{userId}
+    </update>
+
+    <delete id="deleteUser" parameterType="integer">
+        delete from user_tb
+        where
+            user_id = #{userId}
+    </delete>
+
 </mapper>
